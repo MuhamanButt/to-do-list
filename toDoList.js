@@ -314,29 +314,29 @@ function convertToDay(number) {
 function convertToMonth(number) {
   let month = "January";
 
-  if (number == 1) {
+  if (number == 0) {
     month = "January";
-  } else if (number == 2) {
+  } else if (number == 1) {
     month = "February";
-  } else if (number == 3) {
+  } else if (number == 2) {
     month = "March";
-  } else if (number == 4) {
+  } else if (number == 3) {
     month = "April";
-  } else if (number == 5) {
+  } else if (number == 4) {
     month = "May";
-  } else if (number == 6) {
+  } else if (number == 5) {
     month = "June";
-  } else if (number == 7) {
+  } else if (number == 6) {
     month = "July";
-  } else if (number == 8) {
+  } else if (number == 7) {
     month = "August";
-  } else if (number == 9) {
+  } else if (number == 8) {
     month = "September";
-  } else if (number == 10) {
+  } else if (number == 9) {
     month = "October";
-  } else if (number == 11) {
+  } else if (number == 10) {
     month = "November";
-  } else if (number == 12) {
+  } else if (number == 11) {
     month = "December";
   }
   return month;
