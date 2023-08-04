@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <title>To Do List</title>
+    <meta name="description" content="" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <!---------------------------------------animate.css--------------------------------------->
+
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
+    />
+    <!---------------------------------------fonts--------------------------------------->
+    <link
+      href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+      rel="stylesheet"
+    />
+    <!---------------------------------------bootstrap css--------------------------------------->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM"
+      crossorigin="anonymous"
+    />
+    <!--------------------------------------------------------------stylesheet-->
+    <link rel="stylesheet" href="toDoList.css" />
+    <!--------------------------------------------------------------fontawesome-->
+    <script
+      src="https://kit.fontawesome.com/502cbf93d2.js"
+      crossorigin="anonymous"
+    ></script>
+  </head>
+  <body>
+    <div class="container-fluid">
+      <div class="row">
+        <div class="col main-body ">
+          <header>
+            <div class="row header">
+              <div class="col m-0 p-0">
+                <!-----------------------------------------------------------------------main heading-->
+                <div class="row main-heading m-0">
+                  <div class="col drop-shadow p-0">
+                    <p class="m-0 fs-1">To Do List</p>
+                    <span class="fs-6" id="main-heading-day">Wednesday</span>
+                    <span class="fs-6" id="main-heading-date">20th March</span>
+                  </div>
+                </div>
+                <!-----------------------------------------------------------------------days row-->
+                <div class="row days-row justify-content-center drop-shadow m-0">
+                  <div class="col-11">
+                    <div class="row justify-content-around" id="weekdays">
+                      <div class="col-1 day-box fw-semibold" onclick="show1()"><p class="date">21</p><p class="day">Mon</p> </div>
+                      <div class="col-1 day-box fw-semibold" onclick="show2()"><p class="date">22</p><p class="day">Tue</p></div>
+                      <div class="col-1 day-box fw-semibold" onclick="show3()"><p class="date">23</p><p class="day">Wed</p></div>
+                      <div class="col-1 day-box fw-semibold" onclick="show4()"><p class="date">24</p><p class="day">Thu</p></div>
+                      <div class="col-1 day-box fw-semibold" onclick="show5()"><p class="date">25</p><p class="day">Fri</p></div>
+                      <div class="col-1 day-box fw-semibold" onclick="show6()"><p class="date">26</p><p class="day">Sat</p></div>
+                      <div class="col-1 day-box fw-semibold" onclick="show7()"><p class="date">27</p><p class="day">Sun</p></div>
+                    </div>
+                  </div>
+                </div>
+                <!-----------------------------------------------------------------------navbar row-->
+                <div class="row navbar-row justify-content-end p-0 m-0">
+                  <div class="col text-end">
+                    <button class="activePage" id="showAll">All</button>
+                    <button  id="showCompleted">Complete</button>
+                    <button  id="showActive">Active</button>
+                  </div>
+                </div>
+                <!-----------------------------------------------------------------------plain line row-->
+                <div class="row justify-content-center m-0">
+                  <div class="col-10 plain-line drop-shadow">
+                  </div>
+                </div>
+                <!-----------------------------------------------------------------------tasks row-->
+                <div class="row justify-content-center m-0 " id="tasks-row">
+                  <div class="col-11 col-sm-5 d-none" id="CID0">
+                    <div class="row task" >
+                      <div class="col-2 align-self-center completed-check" >
+                        <div class="form-check" >
+                          <input class="form-check-input" type="checkbox" id="flexCheckChecked" >
+                        </div>
+                      </div>
+                      <div class="col-8 text">
+                        <p id="time">3:00 PM</p>
+                        <h5 id="title">Meeting ux Case</h5>
+                        <p id="note">Discuss website issue</p>
+                      </div>
+                      <div class="col-2 align-self-center edit-bar p-0 text-center">
+                        <button type="button" class="btn w-100 fs-6 p-0" id="edit-btn">Edit</button>
+                        <br>
+                        <i class="fa-solid fa-bell "></i>
+                      </div>
+                    </div>
+                    
+                    <!-----------------------------------------------------------------------edit alarm-->
+                    <div class="position-fixed bottom-0 start-50 translate-middle w-75 drop-shadow d-none"  id="edit-menu">
+                      <div class="row justify-content-end">
+                        <div class="col text-end" id="edit-menu-remove-btn">
+                            <button type="button" class="btn p-0">x</button>
+                        </div>
+                      </div>
+                      <div class="row justify-content-center input-row-container">
+                        <div class="col-10">
+                          <div class="row input-row ">
+                            <div class="col">
+                              <label for="formGroupExampleInput" class="form-label m-0" >Title</label>
+                                <input type="text" class="form-control formGroupExampleInput" placeholder="Enter title here" id="title">
+                                <label for="formGroupExampleInput" class="form-label m-0">Note</label>
+                                <input type="text" class="form-control formGroupExampleInput" placeholder="Enter note here" id="note">
+                            </div>
+                            <div class="row time-input">
+                              <div class="col input-group text-center justify-content-between">
+                                <div class="col-4" id="day">
+                                  <input type="text" class="form-control formGroupExampleInput " placeholder="Day" >
+                                </div>
+                                <div class="col-4"  id="hour">
+                                  <input type="Number" class="form-control formGroupExampleInput" placeholder="Hour">
+                                </div>
+                                <div class="col-4" id="min">
+                                  <input type="Number" class="form-control formGroupExampleInput" placeholder="Min" >
+                                </div>
+                              </div>
+                            </div>
+                            <div class="row justify-content-center change-btn-row">
+                              <div class="col text-center">
+                                <button type="button" class="btn " id="change-btn">Change</button>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  
+                </div>
+              </div>
+            </div>
+          </header>
+         
+          
+          <!-----------------------------------------------------------------------add alarm-->
+          <footer>
+            <div class="position-fixed bottom-0 start-50 translate-middle w-75 drop-shadow d-none" id="add-menu">
+              <div class="row justify-content-end">
+                <div class="col text-end" id="add-menu-remove-btn">
+                    <button type="button" class="btn p-0">x</button>
+                </div>
+              </div>
+              <div class="row justify-content-center input-row-container" >
+                <div class="col-10">
+                  <div class="row input-row">
+                    <div class="col ">
+                      <label for="formGroupExampleInput" class="form-label m-0" >Title</label>
+                      <input type="text" class="form-control formGroupExampleInput" placeholder="Enter title here" id="title">
+                      <label for="formGroupExampleInput" class="form-label m-0">Note</label>
+                      <input type="text" class="form-control formGroupExampleInput" placeholder="Enter note here" id="note">
+                    </div>
+                    <div class="row time-input">
+                      <div class="col input-group text-center justify-content-between">
+                        <div class="col-4" id="day">
+                          <input type="text" class="form-control formGroupExampleInput " placeholder="Day" >
+                        </div>
+                        <div class="col-4"  id="hour">
+                          <input type="Number" class="form-control formGroupExampleInput" placeholder="Hour">
+                        </div>
+                        <div class="col-4" id="min">
+                          <input type="Number" class="form-control formGroupExampleInput" placeholder="Min" >
+                        </div>
+                      </div>
+                    </div>
+                    <div class="row justify-content-center ">
+                      <div class="col text-center add-list-btn">
+                        <button type="button" class="btn w-75" id="add-to-list-btn">Add To List</button>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="row justify-content-center">
+              <div class="col">
+                <div class="position-fixed bottom-0 start-50 translate-middle drop-shadow">
+                  <button id="add-remove-btn">+</button>
+                </div>
+              </div>
+            </div>
+          </footer>
+        </div>
+      </div>
+    </div>
+
+    <!--------------------------------------------------------------javascript-->
+    <script src="toDoList.js" async defer></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz"
+      crossorigin="anonymous"
+    ></script>
+  </body>
+</html>
