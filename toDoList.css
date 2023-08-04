@@ -1,3 +1,6 @@
+
+
+
 .drop-shadow {
   filter: drop-shadow(0px 0px 5px rgba(0, 0, 0, 0.747));
 }
@@ -10,7 +13,7 @@ p {
 }
 body {
   height: 100vh;
-  background: radial-gradient(#4b0070, #2e1e43);
+  background: radial-gradient(#592970, #322643);
   background-position: center;
   background-size: cover;
   background-attachment: fixed;
@@ -86,7 +89,7 @@ body {
   border-top: 1px solid #aa00ff;
   border-bottom: 1px solid #aa00ff;
   padding: 5px 0px;
-  background-color: #2e1e43;
+  background-color: #322643;
 }
 .active-day {
   border-bottom: 2px solid #aa00ff;
@@ -113,7 +116,7 @@ body {
 
 /*-----------------------------------------------------------------------add alarm*/
 #add-remove-btn {
-  background: radial-gradient(#4b0070, #2e1e43);
+  background: radial-gradient(#592970, #322643);
   border: 1px solid #ead7ff;
   border-radius: 100%;
   width: 30px;
@@ -122,7 +125,7 @@ body {
 
 #add-menu,
 #edit-menu {
-  background: radial-gradient(#4b0070, #2e1e43);
+  background: radial-gradient(#592970, #322643);
   border: 2px solid #aa00ff;
   border-radius: 10px;
 }
@@ -167,18 +170,18 @@ body {
 .form-check-input {
   background-color: #aa00ff !important;
   border-radius: 100% !important;
-  border-color: #2e1e43 !important;
+  border-color: #322643 !important;
 }
 .text {
   padding: 10px 0px;
 }
 .text p {
-  color: #2e1e43;
+  color: #322643;
   font-size: 10px;
   font-weight: 600;
 }
 .text h5 {
-  color: #2e1e43;
+  color: #322643;
   font-weight: 700;
   margin: 0px;
 }
@@ -187,7 +190,7 @@ body {
   font-weight: 600;
 }
 .edit-bar i {
-  color: #2e1e43;
+  color: #322643;
 }
 
 /*----------------------------------------------------------------------------webkit-scrollbar*/
@@ -211,5 +214,5 @@ body {
 
 /* Handle on hover */
 ::-webkit-scrollbar-thumb:hover {
-  background: #4b0070;
+  background: #592970;
 }
